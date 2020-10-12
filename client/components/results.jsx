@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Results = (props) => {
   const { history } = props;
 
-  if (props.location.state && props.location.state.data.length > 1) {
+  if (props.location.state && props.location.state.data.length > 0) {
     const { data, address } = props.location.state;
     return (
       <div className="page-container">
