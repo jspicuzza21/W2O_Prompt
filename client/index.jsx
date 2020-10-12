@@ -3,21 +3,18 @@ import ReactDom from 'react-dom';
 import {
   HashRouter, Switch, Route, Redirect,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { Home } from './components';
-import store from './store';
+import { Home, Results } from './components';
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <HashRouter>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Redirect to="/" />
-          </Switch>
-        </HashRouter>
-      </Provider>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/results" component={Results} />
+          <Redirect to="/" />
+        </Switch>
+      </HashRouter>
     );
   }
 }
