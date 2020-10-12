@@ -15,14 +15,32 @@ const Results = (props) => {
           </div>
           {data.map((report) => (
             <div key={report.service_request_id} className="box result-box">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h1 className="title">Post ID: {report.service_request_id}</h1>
-                <h3 style={{ marginBottom: '24px' }}>{new Date(report.requested_datetime).toDateString()}</h3>
+              <div>
+                <div className="box-header">
+                  <h1 className="title">Post ID: {report.service_request_id}</h1>
+                  <h3 style={{ marginBottom: '24px' }}>{new Date(report.requested_datetime).toDateString()}</h3>
+                </div>
               </div>
-              <h3><span className="subtitle">Address: </span>{report.address}</h3>
-              <h3><span className="subtitle">Category: </span>{report.service_name}</h3>
-              <h3><span className="subtitle">Status: </span>{report.status}</h3>
-              <h3><span className="subtitle">Description: </span>{report.description}</h3>
+              <div className="box-content" style={{ display: 'flex', alignItems: 'center' }}>
+                {report.media_url !== null
+                && (
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img
+                      src={report.media_url}
+                      style={{
+                        maxHeight: '350px', width: 'auto', alignSelf: 'center', marginRight: '15px',
+                      }}
+                      alt=""
+                    />
+                  </div>
+                )}
+                <div>
+                  <h3><span className="subtitle">Address: </span>{report.address}</h3>
+                  <h3><span className="subtitle">Category: </span>{report.service_name}</h3>
+                  <h3><span className="subtitle">Status: </span>{report.status}</h3>
+                  <h3><span className="subtitle">Description: </span>{report.description}</h3>
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -15,6 +15,9 @@
   max-width: 45%;
   min-width: 45%;
   margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .form{
@@ -48,10 +51,21 @@
   box-shadow: 0px 1px 37px -13px rgba(0,0,0,0.62);
 }
 
+.box-header{
+  display: flex;
+  justify-content: space-between;
+}
+
 .results-header{
   display: flex;
   justify-content: space-around;
   width: 100vw;
+}
+
+.image{
+  background-size: contain;
+  max-height: 500px;
+  width: 500px;
 }
 
 @media only screen and (max-width: 950px) {
@@ -68,5 +82,10 @@
 
   button{
     width: 125px;
+  }
+
+  .box-content{
+    display: flex;
+    flex-direction: column;
   }
 }
