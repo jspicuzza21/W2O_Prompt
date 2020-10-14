@@ -6,7 +6,9 @@
   "scripts": {
     "start:client": "webpack --watch --mode=\"development\"",
     "start:server": "node-dev --respawn server/index.js",
-    "start:dev": "npm run start:client & npm run start:server"
+    "start:dev": "npm run start:client & npm run start:server",
+    "build": "webpack --mode=\"production\"",
+    "start": "node server/index.js"
   },
   "author": "Joe Spicuzza",
   "license": "ISC",
